@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.mybatis.dao.TeacherMapper">
+    <insert id="addTeacher"></insert>
+    <update id="updateTeacher"></update>
+    <delete id="deleteById"></delete>
+    <select id="queryAll" resultType="com.zk.mybatis.pojo.Teacher"></select>
+
+    <select id="queryById" resultMap="teacher">
+        select tea.id teaid,tea.name teaname ,stu.id stuid,stu.name stuname from teacher tea ,student  stu  where tea.id=stu.tid and   tea.id= #{id}
+    </select>
+
+
+    <resultMap id="teacher" type="com.zk.mybatis.pojo.Teacher">
+        <result  property="id" column="teaid" ></result>
+        <result  property="name" column="teaname" ></result>
+        <collection property="studentList" javaType="ArrayList" ofType="com.zk.mybatis.pojo.Student">
+            <result property="id" column="stuid"></result>
+            <result property="name" column="stuname"></result>
+        </collection>
+    </resultMap>
+
+</mapper>

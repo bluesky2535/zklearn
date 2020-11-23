@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!--学习各种数据结构类型的注入方式-->
+
+
+    <!--set方式注入-->
+    <bean id="myDataSource" class="com.zk.spring.MyDataSource" >
+        <!-- results in a setDriverClassName(String) call -->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mydb"/>
+        <property name="username" value="root"/>
+        <property name="password" value="misterkaoli"/>
+    </bean>
+
+
+    <bean id="address" class="com.zk.spring.Address">
+        <property name="aname" value="北京市"/>
+    </bean>
+    <bean id="student" class="com.zk.spring.Student">
+        <property name="name" value="wangwu"/>
+        <property name="address" ref="address"/>
+
+        <!-- results in a setAdminEmails(java.util.Properties) call -->
+        <property name="properties">
+            <props>
+                <prop key="administrator">administrator@example.org</prop>
+                <prop key="support">support@example.org</prop>
+                <prop key="development">development@example.org</prop>
+            </props>
+        </property>
+        <!-- results in a setSomeList(java.util.List) call -->
+        <property name="toys">
+            <list>
+                <value>a list element followed by a reference</value>
+                <ref bean="myDataSource" />
+
+            </list>
+        </property>
+        <!-- results in a setSomeMap(java.util.Map) call -->
+        <property name="course">
+            <map>
+                <entry key="an entry" value="just some string"/>
+                <entry key ="a ref" value-ref="myDataSource"/>
+            </map>
+        </property>
+        <!-- results in a setSomeSet(java.util.Set) call -->
+        <property name="hobby">
+            <set>
+                <value>just some string</value>
+                <ref bean="myDataSource" />
+            </set>
+        </property>
+
+        <!--空值-->
+        <property name="wife" value=""/>
+
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>机器学习</value>
+                <value>Java核心思想</value>
+                <value>kafka</value>
+            </array>
+        </property>
+
+    </bean>
+
+
+
+</beans>
+
+
+
+

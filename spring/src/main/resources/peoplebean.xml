@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--学习注解bean-->
+
+
+    <bean id="dog" class="com.zk.spring.Dog" />
+    <bean id="cat" class="com.zk.spring.Cat"/>
+    <bean id="cat1" class="com.zk.spring.Cat"/>
+    <bean id="wandou" class="com.zk.spring.Cat"/>
+    <bean id="people" class="com.zk.spring.People" />
+
+    <!--自动装配 ,将people的属性dog和cat注入
+     byName 根据属性名称自动装配bean
+     byType 根据属性的类型进行装配-->
+<!--    <bean id="people" class="com.zk.spring.People" autowire="byName">
+        <property name="name" value="赵六"/>
+    </bean>-->
+
+
+    <!--开启注解-->
+    <context:annotation-config/>
+
+    <!--扫描包-->
+    <context:component-scan base-package="com.zk.spring"/>
+
+
+
+
+
+</beans>
