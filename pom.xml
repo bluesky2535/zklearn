@@ -24,6 +24,11 @@
         <module>springboot</module>
         <module>analyspringboot</module>
         <module>designmodel</module>
+        <module>tcpudp</module>
+        <module>myldap</module>
+        <module>multidatasource</module>
+        <module>hbase</module>
+        <module>datawarehouse</module>
     </modules>
     <dependencies>
 <!--                <dependency>-->

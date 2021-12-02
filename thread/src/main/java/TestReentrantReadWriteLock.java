@@ -2,6 +2,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 /**
  * @author zk
@@ -13,7 +14,7 @@ public class TestReentrantReadWriteLock {
 
 
     private String name="sss";
-    private static Logger logger= LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+
 
     public TestReentrantReadWriteLock() {
 

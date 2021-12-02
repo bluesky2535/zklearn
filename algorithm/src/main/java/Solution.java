@@ -9,7 +9,7 @@ import java.util.HashMap;
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution2 {
     HashMap<Integer, Integer> dic = new HashMap<>();
     int[] po;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -31,6 +31,6 @@ class Solution {
         int[] pre=new int[]{3,9,20,15,7};
         int[] inorder=new int[]{9,3,15,20,7};
         Solution s=new Solution();
-        s.buildTree(pre,inorder);
+
     }
 }
