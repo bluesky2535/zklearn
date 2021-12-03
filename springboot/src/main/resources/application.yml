@@ -6,7 +6,7 @@ spring:
   datasource:
     username: root
     password: E&7D*8C(9
-    url: jdbc:mysql://39.105.14.217:3306/zktest?useSSL=false&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/zktest?useSSL=false&characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initial-size: 2

@@ -1,0 +1,32 @@
+server:
+  port: 9696
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+      master:
+        username: root
+        password: 123456
+        url: jdbc:mysql://127.0.0.1:3306/zktest?useSSL=false&characterEncoding=utf-8
+        driver-class-name: com.mysql.jdbc.Driver
+      slave:
+        username: root
+        password: 123456
+        url: jdbc:mysql://127.0.0.1:3306/zktest2?useSSL=false&characterEncoding=utf-8
+        driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml
+   mapper-locations: classpath:com/zklearn/multidatasource/dao/*.xml
+debug: true

@@ -10,16 +10,8 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    List<User> queryAll();
-
-    User queryById(int id);
-
-    int deleteById(int id);
-
     int addUser(User user);
 
-    int updateUser(User user);
 
-    List<User> getUserByRowBounds();
 
 }
