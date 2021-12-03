@@ -4,33 +4,33 @@ import java.util.Arrays;
 
 /**
  * @BelongsProject: zklearn
- * @BelongsPackage: PACKAGE_NAME
+ * @BelongsPackage: com.zklearn.sort
  * @Author: zk
- * @CreateTime: 2021-12-02 15:22:29
- * @Description: 选择排序
+ * @CreateTime: 2021-12-02 16:21:41
+ * @Description: 插入排序
  */
-public class Selection {
+public class Insertion {
 
     public static void main(String[] args) {
         Integer[] a={6,10,8,4,9};
-        selectionSort(a);
+        insertionSort(a);
     }
+    public static void insertionSort(Integer[] arr){
 
-
-
-    public static void selectionSort(Integer[] arr){
-        for(int i=0;i<arr.length;i++){
-            int min=i;
+        //i为待插入的元素，与已经排序好的元素进行倒序遍历比较
+        for (int i = 1; i < arr.length; i++) {
             System.out.println(Arrays.toString(arr));
-            for(int j=i;j<arr.length-1;j++){
-                if(arr[min]>arr[j+1]){
-                    min=j+1;
+            for (int j = i; j > 0 ; j--) {
+                if(greater(arr[j-1],arr[j]) ){
+                    exchange(arr,j,j-1);
+                }else{
+                    break;
                 }
             }
-            exchange(arr,i,min);
-            System.out.println(Arrays.toString(arr)+" "+ min+"  "+i);
+            System.out.println(Arrays.toString(arr));
             System.out.println("========================== ");
         }
+
 
     }
 

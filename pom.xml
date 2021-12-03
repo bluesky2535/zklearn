@@ -24,28 +24,9 @@
         <module>springboot</module>
         <module>analyspringboot</module>
         <module>designmodel</module>
+        <module>flink</module>
     </modules>
     <dependencies>
-<!--                <dependency>-->
-<!--                    <groupId>org.slf4j</groupId>-->
-<!--                    <artifactId>slf4j-api</artifactId>-->
-<!--                    <version>1.7.25</version>-->
-<!--                </dependency>-->
-
-        <!--        &lt;!&ndash;log4j与slf4j不是直接实现的，所以需要一个桥接的包&ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-log4j12</artifactId>-->
-        <!--            <version>1.7.21</version>-->
-        <!--        </dependency>-->
-
-
-        <!--        <dependency>-->
-        <!--            <groupId>log4j</groupId>-->
-        <!--            <artifactId>log4j</artifactId>-->
-        <!--            <version>1.2.17</version>-->
-        <!--        </dependency>-->
-
 
         <dependency>
             <groupId>org.projectlombok</groupId>
