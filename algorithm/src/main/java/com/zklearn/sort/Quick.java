@@ -50,13 +50,17 @@ public class Quick {
                     break;
                 }
             }
+
             if (left >= right) {
                 break;
             } else {
+                //将左指针指向的值大于分解值，右指针指向的值小于分界值时，进行两者的交换
                 exchange(arr, left, right);
             }
         }
+        //最后的left和right会指向同一元素，则将其与分界值进行交换
         exchange(arr, low, right);
+
         return right;
     }
 

@@ -1,4 +1,5 @@
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import javafx.scene.control.Cell;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
@@ -13,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.Connection;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
